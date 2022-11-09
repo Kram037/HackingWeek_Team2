@@ -1,13 +1,13 @@
 package HackingWeek_Team2.it.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Garage {
 
     private static final Garage garage = new Garage();
 
-    private List<VeicoloAMotore> postiGarage = new ArrayList<>();
+    private MotorVehicle[] postiGarage = new MotorVehicle[15];
+
 
     private Garage(){}
 
@@ -15,27 +15,39 @@ public class Garage {
         return garage;
     }
 
-    public void aggiungiVeicolo(VeicoloAMotore veicolo){
-        if(postiGarage.size() < 15) {
-            postiGarage.add(veicolo);
-        } else {
-            System.out.println("Il garage è pieno!");
-        }
+    public void aggiungiVeicolo(MotorVehicle veicolo) {
+
+       for(int i = 0; i < postiGarage.length; i++){
+
+          if(postiGarage[i] == null){
+              postiGarage[i] = veicolo;
+              break;
+          }
+
+       }
+
     }
 
-    public VeicoloAMotore removeVehicle(int posto){
-        postiGarage.remove(posto);
-        return postiGarage.get(posto);
+    public MotorVehicle removeVehicle(int posto) {
+        MotorVehicle temp = postiGarage[posto];
+        postiGarage[posto] = null;
+        return temp;
     }
 
     public void printGarageDetails(){
-        System.out.println(postiGarage.toString());
 
-        postiGarage.stream().forEach(details -> {
+        System.out.println("*** GARAGE - Max parking lot: 15 ***\n");
+        for (MotorVehicle posto : postiGarage) {
+            try {
+                System.out.println("Parking lot [" + Arrays.asList(postiGarage).indexOf(posto) + "]: " + posto.getClass().getSimpleName());
+                posto.info();
+                System.out.println("****************************************");
+            } catch (NullPointerException e) {
+                System.out.println("Free parking lot");
+                System.out.println("****************************************");
+            }
+        }
 
-            System.out.println(details.getClass().getSimpleName() + " posto: " + postiGarage.indexOf(details));
-            details.info();
-        });
     }
 
 }
