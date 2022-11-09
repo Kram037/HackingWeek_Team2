@@ -7,17 +7,17 @@ public class Main {
 
         Garage garage = Garage.getInstance();
 
-        MotorVehicle auto = new Car("FIAT", 1998, 6, 4, "diesel");
-        MotorVehicle moto = new Motorcycle("ducati", 2000, 4, 9);
-        MotorVehicle furgone = new Van("MAN", 2022, 10, 1500.6);
-        MotorVehicle auto1 = new Car("Audi", 1998, 6, 4, "diesel");
-        MotorVehicle furgone1 = new Van("Mercedes", 2022, 10, 1500.6);
+        MotorVehicle car = new Car("FIAT", 1998, 6, 4, "diesel");
+        MotorVehicle motorcycle = new Motorcycle("ducati", 2000, 4, 9);
+        MotorVehicle van = new Van("MAN", 2022, 10, 1500.6);
+        MotorVehicle car1 = new Car("Audi", 1998, 6, 4, "diesel");
+        MotorVehicle van1 = new Van("Mercedes", 2022, 10, 1500.6);
 
-        garage.aggiungiVeicolo(auto);
-        garage.aggiungiVeicolo(moto);
-        garage.aggiungiVeicolo(furgone);
-        garage.aggiungiVeicolo(auto1);
-        garage.aggiungiVeicolo(furgone1);
+        garage.addVehicle(car);
+        garage.addVehicle(motorcycle);
+        garage.addVehicle(van);
+        garage.addVehicle(car1);
+        garage.addVehicle(van1);
         garage.removeVehicle(1);
 
         garage.printGarageDetails();

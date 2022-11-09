@@ -11,7 +11,7 @@ public abstract class MotorVehicle {
         this.year = year;
         this.displacement = displacement;
     }
-
+    //getter and setter
     public String getBrand() {
         return brand;
     }
@@ -36,8 +36,10 @@ public abstract class MotorVehicle {
         this.displacement = displacement;
     }
 
+    /**
+     * info method that print vehicle details, overloaded in the classes that extend MotorVehicle
+     */
     public void info(){
         System.out.print(brand + " - production year: " + year + " - displacement: " + displacement);
     }
-
 }
