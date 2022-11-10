@@ -16,7 +16,7 @@ public class Main {
         garage.addVehicle(van);
         garage.addVehicle(car1);
         garage.addVehicle(van1);
-        garage.removeVehicle(1);
+        System.out.println("Removed vehicle : " + garage.removeVehicle(1).info());
         garage.removeVehicle(-2);
 
         garage.printGarageDetails();

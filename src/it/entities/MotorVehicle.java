@@ -6,7 +6,7 @@ public abstract class MotorVehicle {
     private int year;
     private double displacement;
 
-    public MotorVehicle(String brand, int year, double displacement) {
+    protected MotorVehicle(String brand, int year, double displacement) {
         this.brand = brand;
         this.year = year;
         this.displacement = displacement;
@@ -39,7 +39,7 @@ public abstract class MotorVehicle {
     /**
      * info method that prints vehicle details, overridden in the classes that extend MotorVehicle
      */
-    public void info(){
-        System.out.print(brand + " - production year: " + year + " - displacement: " + displacement);
+    public String info(){
+        return brand + " - production year: " + year + " - displacement: " + displacement;
     }
 }

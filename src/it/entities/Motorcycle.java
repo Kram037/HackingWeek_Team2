@@ -18,9 +18,8 @@ public class Motorcycle extends MotorVehicle {
     }
 
     @Override
-    public void info() {
-        super.info();
-        System.out.println(" - engine times: " + engineTimes);
+    public String info() {
+        return super.info() + " - engine times: " + engineTimes;
     }
 
 }

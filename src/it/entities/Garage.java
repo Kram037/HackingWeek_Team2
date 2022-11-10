@@ -1,6 +1,5 @@
 package it.entities;
 
-import java.util.Arrays;
 
 public class Garage {
     
@@ -38,21 +37,17 @@ public class Garage {
      * @return removed object
      */
     public MotorVehicle removeVehicle(int lot) {
-
-        MotorVehicle removedVehicle = null;
-
-        try {
-            removedVehicle = garageLots[lot];
-            if (garageLots[lot] == null) {
-                System.out.println("The parking lot " + lot + " is already free.\n");
-            } else {
-                garageLots[lot] = null;
-            }
-        } catch (ArrayIndexOutOfBoundsException e) {
+        if ((lot < 0) || (lot > garageLots.length -1)){
             System.out.println("The parking lot doesn't exist. Choose another one.\n");
-        } finally {
-            return removedVehicle;
+            return null;
         }
+        if(garageLots[lot] == null){
+            System.out.println("The parking lot " + lot + " is already free.\n");
+            return null;
+        }
+        MotorVehicle removedVehicle = garageLots[lot];
+        garageLots[lot] = null;
+        return removedVehicle;
 
     }
 
@@ -67,16 +62,16 @@ public class Garage {
         System.out.println("*** GARAGE - Max parking lot: 15 ***\n");
         int lotNum = 0;
         for (MotorVehicle lot : garageLots) {
+            System.out.print("Parking lot [" + lotNum + "]: ");
             if (lot == null){
-                System.out.println("Parking lot [" + lotNum + "] free.");
-                System.out.println("****************************************");
-                lotNum++;
+                System.out.println("free.");
+
             } else {
-                System.out.println("Parking lot [" + Arrays.asList(garageLots).indexOf(lot) + "]: " + lot.getClass().getSimpleName());
-                lot.info();
-                System.out.println("****************************************");
-                lotNum++;
+                System.out.println(lot.getClass().getSimpleName());
+                System.out.println(lot.info());
             }
+            lotNum++;
+            System.out.println("****************************************");
         }
     }
 }

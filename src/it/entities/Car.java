@@ -28,9 +28,8 @@ public class Car extends MotorVehicle {
     }
 
     @Override
-    public void info() {
-        super.info();
-        System.out.println(doors + " doors - fuel type: " + fuel);
+    public String info() {
+        return super.info() + doors + " doors - fuel type: " + fuel;
     }
 }
 

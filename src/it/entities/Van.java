@@ -18,8 +18,7 @@ public class Van extends MotorVehicle {
     }
 
     @Override
-    public void info() {
-        super.info();
-        System.out.println(" - capacity: " + capacity);
+    public String info() {
+       return super.info() + " - capacity: " + capacity;
     }
 }
