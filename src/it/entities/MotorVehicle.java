@@ -40,6 +40,6 @@ public abstract class MotorVehicle {
      * info method that prints vehicle details, overridden in the classes that extend MotorVehicle
      */
     public void info(){
-        System.out.print(brand + " - production year: " + year + " - displacement: " + displacement);
+        System.out.print(brand + " - production year: " + year + " - displacement: " + displacement + " - ");
     }
 }
