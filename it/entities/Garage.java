@@ -16,7 +16,8 @@ public class Garage {
     }
 
     /**
-     * method that uses a for loop to cycle the array garageLots and checks if the lot is empty to add an element
+     * method that uses a for loop to cycle the array garageLots and check every lot to find the first empty lot 
+     * to add an element
      * @param vehicle to insert in a parking lot
      */
     public void addVehicle(MotorVehicle vehicle) {
