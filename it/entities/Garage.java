@@ -16,7 +16,7 @@ public class Garage {
     }
 
     /**
-     * method the use a for loop to cycle the array garageLots and an if statement to add an input parameter inside
+     * method that uses a for loop to cycle the array garageLots and checks if the lot is empty to add an element
      * @param vehicle to insert in a parking lot
      */
     public void addVehicle(MotorVehicle vehicle) {
@@ -31,31 +31,30 @@ public class Garage {
     }
 
     /**
-     * method to remove an item inside the array using an instance of the object removed
+     * method to remove an item from the array returning an instance of the object itself
      * @param lot number of the garage lot
      * @return removed object
      */
     public MotorVehicle removeVehicle(int lot) {
-        MotorVehicle removed = garageLots[lot];
+        MotorVehicle removedVehicle = garageLots[lot];
         garageLots[lot] = null;
-        return removed;
+        return removedVehicle;
     }
 
     /**
-     * method that print garage details using a foreach to cycle the garageLots and printing the value inside but using
-     * a try catch structure to avoid the NullPointerException caused from the use of the removedVehicle method and the
-     * presence of null objects inside the garageLots array
+     * method that cycles through the garageLots array to check, with an if else block, if the lots are empty printing
+     * that the lot is empty, or there is a vehicle printing its details.
      */
     public void printGarageDetails(){
 
         System.out.println("*** GARAGE - Max parking lot: 15 ***\n");
-        for (MotorVehicle posto : garageLots) {
-            try {
-                System.out.println("Parking lot [" + Arrays.asList(garageLots).indexOf(posto) + "]: " + posto.getClass().getSimpleName());
-                posto.info();
-                System.out.println("****************************************");
-            } catch (NullPointerException e) {
+        for (MotorVehicle lot : garageLots) {
+            if (lot == null){
                 System.out.println("Free parking lot");
+                System.out.println("****************************************");
+            } else {
+                System.out.println("Parking lot [" + Arrays.asList(garageLots).indexOf(lot) + "]: " + lot.getClass().getSimpleName());
+                lot.info();
                 System.out.println("****************************************");
             }
         }
