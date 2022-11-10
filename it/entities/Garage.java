@@ -37,14 +37,18 @@ public class Garage {
      * @return removed object
      */
     public MotorVehicle removeVehicle(int lot) {
-        MotorVehicle removedVehicle = garageLots[lot];
-        garageLots[lot] = null;
-        return removedVehicle;
+        if(garageLots[lot] == null){
+            System.out.println("The parking lot is already free");
+        } else {
+            MotorVehicle removedVehicle = garageLots[lot];
+            garageLots[lot] = null;
+            return removedVehicle;
+        }
     }
 
     /**
-     * method that cycles through the garageLots array to check, with an if else block, if the lots are empty printing
-     * that the lot is empty, or there is a vehicle printing its details.
+     * method that cycles through the garageLots array to check, with an if else block, if the lots are free printing
+     * that the lot is free, or there is a vehicle printing its details.
      */
     public void printGarageDetails(){
 
