@@ -3,13 +3,13 @@ package HackingWeek_Team2.it.entities;
 import java.util.Arrays;
 
 public class Garage {
-    //treating the class as a singleton
+    
     private static final Garage garage = new Garage();
 
     private final MotorVehicle[] garageLots = new MotorVehicle[15];
 
 
-    private Garage(){} //constructor method
+    private Garage(){} 
 
     public static Garage getInstance(){
         return garage;
