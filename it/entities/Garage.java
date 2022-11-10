@@ -37,13 +37,13 @@ public class Garage {
      * @return removed object
      */
     public MotorVehicle removeVehicle(int lot) {
+        MotorVehicle removedVehicle = garageLots[lot];
         if(garageLots[lot] == null){
-            System.out.println("The parking lot is already free");
+            System.out.println("The parking lot " + lot + " is already free\n");
         } else {
-            MotorVehicle removedVehicle = garageLots[lot];
             garageLots[lot] = null;
-            return removedVehicle;
         }
+        return removedVehicle;
     }
 
     /**
