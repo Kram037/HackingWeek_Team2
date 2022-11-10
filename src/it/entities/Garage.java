@@ -1,4 +1,4 @@
-package HackingWeek_Team2.it.entities;
+package it.entities;
 
 import java.util.Arrays;
 
@@ -29,6 +29,7 @@ public class Garage {
               break;
           }
        }
+
     }
 
     /**
@@ -37,13 +38,22 @@ public class Garage {
      * @return removed object
      */
     public MotorVehicle removeVehicle(int lot) {
-        MotorVehicle removedVehicle = garageLots[lot];
-        if(garageLots[lot] == null){
-            System.out.println("The parking lot " + lot + " is already free\n");
-        } else {
-            garageLots[lot] = null;
+
+        MotorVehicle removedVehicle = null;
+
+        try {
+            removedVehicle = garageLots[lot];
+            if (garageLots[lot] == null) {
+                System.out.println("The parking lot " + lot + " is already free\n");
+            } else {
+                garageLots[lot] = null;
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("The parking lot doesn't exist. Choose another one\n");
+        } finally {
+            return removedVehicle;
         }
-        return removedVehicle;
+
     }
 
     /**

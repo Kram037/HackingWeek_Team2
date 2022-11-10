@@ -1,4 +1,4 @@
-import HackingWeek_Team2.it.entities.*;
+import it.entities.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +17,7 @@ public class Main {
         garage.addVehicle(car1);
         garage.addVehicle(van1);
         garage.removeVehicle(1);
+        garage.removeVehicle(-2);
 
         garage.printGarageDetails();
 

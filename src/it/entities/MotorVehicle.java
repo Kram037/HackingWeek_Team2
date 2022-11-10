@@ -1,4 +1,4 @@
-package HackingWeek_Team2.it.entities;
+package it.entities;
 
 public abstract class MotorVehicle {
 
