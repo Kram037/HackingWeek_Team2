@@ -37,7 +37,7 @@ public abstract class MotorVehicle {
     }
 
     /**
-     * info method that print vehicle details, overloaded in the classes that extend MotorVehicle
+     * info method that prints vehicle details, overridden in the classes that extend MotorVehicle
      */
     public void info(){
         System.out.print(brand + " - production year: " + year + " - displacement: " + displacement);
