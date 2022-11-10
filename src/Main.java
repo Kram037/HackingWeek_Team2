@@ -1,5 +1,3 @@
-package HackingWeek_Team2;
-
 import HackingWeek_Team2.it.entities.*;
 
 public class Main {
