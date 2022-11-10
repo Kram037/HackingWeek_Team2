@@ -5,7 +5,7 @@ public class Car extends MotorVehicle {
     private int doors;
     private String fuel; //diesel - benzina
 
-    public Car(String brand, int year, double displacement, int doors, String fuel) {
+    public Car(String brand, int year, double displacement, String fuel, int doors) {
         super(brand, year, displacement);
         this.doors = doors;
         this.fuel = fuel;
@@ -29,7 +29,7 @@ public class Car extends MotorVehicle {
 
     @Override
     public String info() {
-        return super.info() + doors + " doors - fuel type: " + fuel;
+        return super.info() + "fuel type: " + fuel + " - " + doors + " doors";
     }
 }
 

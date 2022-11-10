@@ -42,4 +42,5 @@ public abstract class MotorVehicle {
     public String info(){
         return brand + " - production year: " + year + " - displacement: " + displacement;
     }
+
 }

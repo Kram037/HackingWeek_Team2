@@ -7,7 +7,6 @@ public class Garage {
 
     private final MotorVehicle[] garageLots = new MotorVehicle[15];
 
-
     private Garage(){} 
 
     public static Garage getInstance(){
@@ -28,6 +27,8 @@ public class Garage {
               break;
           }
        }
+
+        System.out.println("Vehicle parked\n");
 
     }
 
